@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// Comando for
+
 int main(){
 
     int j=0, k=0;
