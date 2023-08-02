@@ -3,6 +3,7 @@
 using namespace std;
 
 void fiboIterativo(int);
+int fiboRecursivo(int);
 
 int main(){
 
@@ -13,7 +14,10 @@ int main(){
 
     cout << "Sequência Fibonacci:\n";
 
-    fiboIterativo(num);
+    //fiboIterativo(num);
+    for(int i=0; i<num; i++){
+        cout << fiboRecursivo(i+1) << "\n";
+    }
 
     return 0;
 }
@@ -26,5 +30,13 @@ void fiboIterativo(int n){
         antecessor = atual;
         atual = proximo;
         proximo = atual + antecessor;
+    }
+}
+
+int fiboRecursivo(int n){
+    if(n==1 || n==2){
+        return 1;
+    } else{
+        return fiboRecursivo(n-1)+fiboRecursivo(n-2);
     }
 }
