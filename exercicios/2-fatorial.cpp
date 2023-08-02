@@ -2,39 +2,41 @@
 
 using namespace std;
 
-void fatIterativo(int);
+int fatIterativo(int);
 int fatRecursivo(int);
 
 int main(){
 
-    int num;
+    int num, fat;
 
     cout << "Digite um número: ";
     cin >> num;
 
-    fatIterativo(num);
-    //fatRecursivo(num);
+    cout << "\nFatorial de " << num << ":";
+    cout << "\n\n" << num << "! = ";
+
+    //fat = fatIterativo(num);
+    fat = fatRecursivo(num);
+
+    cout << fat << "\n";
 
     return 0;
 }
 
-void fatIterativo(int n){
-    int fat=1;
-
-    cout << "\nFatorial de " << n << ":";
-    cout << "\n\n" << n << "! = ";
+int fatIterativo(int n){
+    int fatorial=1;
 
     for(int i=n; i>0; i--){
-        cout << i;
-        if(i != 1){
-            cout << " x ";
-        }
-        fat = fat * i;
+        fatorial = fatorial * i;
     }
-    cout << " = " << fat << "\n";
+
+    return fatorial;
 }
 
 int fatRecursivo(int n){
+    if(n == 0){
+        return 1;
+    }
 
-    return 0;
+    return n*fatRecursivo(n-1);
 }
